@@ -11,6 +11,10 @@ import microbitMoreConnectionIconURL from './microbitmore/connection-icon.svg';
 import microbitMoreConnectionSmallIconURL from './microbitmore/connection-small-icon.svg';
 import microbitMoreTranslations from './microbitmore/translations.json';
 
+import rootImage from './root/root.png';
+import rootPeripheralImage from './root/root-illustration.svg';
+import rootMenuImage from './root/root-small.svg';
+
 import controlplus from './controlplus';
 import duplotrain from './duplotrain';
 import legoble from './legoble';
@@ -149,6 +153,36 @@ const extensions = [
             />
         ),
         helpLink: 'https://microbit-more.github.io/',
+    },
+    {
+        name: 'Root',
+        extensionId: 'root',
+        collaborator: 'Root Robotics',
+        iconURL: rootImage,
+        insetIconURL: rootMenuImage,
+        description: (
+            <FormattedMessage
+                defaultMessage="Draw and create with Root."
+                description="Use Root with Scratch 3.0!"
+                id="gui.extension.root.description"
+            />
+        ),
+        featured: true,
+        disabled: false,
+        bluetoothRequired: true,
+        launchPeripheralConnectionFlow: true,
+        useAutoScan: false,
+        peripheralImage: rootPeripheralImage,
+        smallPeripheralImage: rootMenuImage,
+        connectingMessage: (
+            <FormattedMessage
+                defaultMessage="Connecting..."
+                description="Message to help people connect to their Root."
+                id="gui.extension.root.connectingMessage"
+            />
+        ),
+        helpLink: 'https://github.com/raphaelcherney/scratch-vm'
+
     },
     controlplus,
     duplotrain,
