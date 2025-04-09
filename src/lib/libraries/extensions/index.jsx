@@ -5,6 +5,27 @@ import samlabsIconURL from './samlabs/samlabs.png';
 import sambotIconURL from './samlabs/sambot.png';
 import samlabsInsetIconURL from './samlabs/samlabs-small.svg';
 
+import microbitMoreIconURL from './microbitmore/entry-icon.png';
+import microbitMoreInsetIconURL from './microbitmore/inset-icon.svg';
+import microbitMoreConnectionIconURL from './microbitmore/connection-icon.svg';
+import microbitMoreConnectionSmallIconURL from './microbitmore/connection-small-icon.svg';
+import microbitMoreTranslations from './microbitmore/translations.json';
+
+import rootImage from './root/root.png';
+import rootPeripheralImage from './root/root-illustration.svg';
+import rootMenuImage from './root/root-small.svg';
+
+import controlplus from './controlplus';
+import duplotrain from './duplotrain';
+import legoble from './legoble';
+import legoluigi from './legoluigi';
+import legomario from './legomario';
+import legopeach from './legopeach';
+import legoremote from './legoremote';
+import poweredup from './poweredup';
+import spikeessential from './spikeessential';
+// import spikeprime from './spikeprime';
+
 import musicIconURL from './music/music.png';
 import musicInsetIconURL from './music/music-small.svg';
 
@@ -50,7 +71,7 @@ import gdxforInsetIconURL from './gdxfor/gdxfor-small.svg';
 import gdxforConnectionIconURL from './gdxfor/gdxfor-illustration.svg';
 import gdxforConnectionSmallIconURL from './gdxfor/gdxfor-small.svg';
 
-export default [
+const extensions = [
     {
         name: (
             <FormattedMessage
@@ -76,8 +97,8 @@ export default [
     {
         name: (
             <FormattedMessage
-                defaultMessage="BabyBot"
-                description="Name for the 'BabyBot' extension"
+                defaultMessage="Baby SAM Bot"
+                description="Name for the 'Baby SAM Bot' extension"
                 id="gui.extension.sambot.name"
             />
         ),
@@ -86,8 +107,8 @@ export default [
         insetIconURL: samlabsInsetIconURL,
         description: (
             <FormattedMessage
-                defaultMessage="BabyBot"
-                description="Description for the 'BabyBot' extension"
+                defaultMessage="Baby SAM Bot"
+                description="Description for the 'Baby SAM Bot' extension"
                 id="gui.extension.sambot.description"
             />
         ),
@@ -95,6 +116,84 @@ export default [
         disabled: false,
         bluetoothRequired: true
     },
+    {
+        translationMap: microbitMoreTranslations,
+        name: (
+            <FormattedMessage
+                defaultMessage='MicroBit More'
+                description='Name of this extension'
+                id='mbitMore.entry.name'
+            />
+        ),
+        extensionId: 'microbitMore',
+        extensionURL: 'https://microbit-more.github.io/dist/microbitMore.mjs',
+        collaborator: 'Yengawa Lab',
+        iconURL: microbitMoreIconURL,
+        insetIconURL: microbitMoreInsetIconURL,
+        description: (
+            <formatMessage
+                defaultMessage='Play with all functions of micro:bit.'
+                description="Description for the 'Microbit More' extension"
+                id='mbitMore.entry.description'
+            />
+        ),
+        featured: true,
+        disabled: false,
+        bluetoothRequired: true,
+        internetConnectionRequired: false,
+        launchPeripheralConnectionFlow: true,
+        useAutoScan: false,
+        connectionIconURL: microbitMoreConnectionIconURL,
+        connectionSmallIconURL: microbitMoreConnectionSmallIconURL,
+        connectingMessage: (
+            <formatMessage
+                defaultMessage='Connecting'
+                description='Message to help people connect to their micro:bit.'
+                id='gui.extension.microbit.connectingMessage'
+            />
+        ),
+        helpLink: 'https://microbit-more.github.io/',
+    },
+    {
+        name: 'Root',
+        extensionId: 'root',
+        collaborator: 'Root Robotics',
+        iconURL: rootImage,
+        insetIconURL: rootMenuImage,
+        description: (
+            <FormattedMessage
+                defaultMessage="Draw and create with Root."
+                description="Use Root with Scratch 3.0!"
+                id="gui.extension.root.description"
+            />
+        ),
+        featured: true,
+        disabled: false,
+        bluetoothRequired: true,
+        launchPeripheralConnectionFlow: true,
+        useAutoScan: false,
+        peripheralImage: rootPeripheralImage,
+        smallPeripheralImage: rootMenuImage,
+        connectingMessage: (
+            <FormattedMessage
+                defaultMessage="Connecting..."
+                description="Message to help people connect to their Root."
+                id="gui.extension.root.connectingMessage"
+            />
+        ),
+        helpLink: 'https://github.com/raphaelcherney/scratch-vm'
+
+    },
+    controlplus,
+    duplotrain,
+    legoble,
+    legoluigi,
+    legomario,
+    legopeach,
+    legoremote,
+    poweredup,
+    spikeessential,
+    // spikeprime,
     {
         name: (
             <FormattedMessage
@@ -367,3 +466,8 @@ export default [
         helpLink: 'https://scratch.mit.edu/vernier'
     }
 ];
+
+export default extensions;
+
+import extensionLoader from './extensionLoader/index.jsx';
+extensions.unshift(extensionLoader);
