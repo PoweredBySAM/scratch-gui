@@ -15,6 +15,8 @@ import rootImage from './root/root.png';
 import rootPeripheralImage from './root/root-illustration.svg';
 import rootMenuImage from './root/root-small.svg';
 
+import huskylens from './huskylens';
+
 import controlplus from './controlplus';
 import duplotrain from './duplotrain';
 import legoble from './legoble';
@@ -184,6 +186,7 @@ const extensions = [
         helpLink: 'https://github.com/raphaelcherney/scratch-vm'
 
     },
+    huskylens,
     controlplus,
     duplotrain,
     legoble,
