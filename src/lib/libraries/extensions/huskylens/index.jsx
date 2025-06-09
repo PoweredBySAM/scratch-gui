@@ -3,7 +3,7 @@
  */
 
 import iconURL from './huskylens.png';
-//import insetIconURL from './huskylens-small.svg';
+// import insetIconURL from './huskylens-small.svg';
 import translations from './translations.json';
 
 /**
@@ -41,7 +41,8 @@ const entry = {
     setFormatMessage: formatter => {
         formatMessage = formatter;
     },
-    translationMap: translations
+    translationMap: translations,
+    helpLink: 'https://github.com/Rbel12b/scratch-huskylens/blob/main/README.md'
 };
 
 export {entry}; // loadable-extension needs this line.
