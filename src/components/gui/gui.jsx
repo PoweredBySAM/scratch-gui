@@ -238,7 +238,7 @@ const GUIComponent = props => {
                     isTotallyNormal={isTotallyNormal}
                     logo={logo}
                     renderLogin={renderLogin}
-                    showComingSoon={showComingSoon}
+                    showComingSoon={false}
                     onClickAbout={onClickAbout}
                     onClickAccountNav={onClickAccountNav}
                     onClickLogo={onClickLogo}
@@ -350,7 +350,7 @@ const GUIComponent = props => {
                                     {soundsTabVisible ? <SoundTab vm={vm} /> : null}
                                 </TabPanel>
                             </Tabs>
-                            {backpackVisible ? (
+                            {false ? (
                                 <Backpack host={backpackHost} />
                             ) : null}
                         </Box>
