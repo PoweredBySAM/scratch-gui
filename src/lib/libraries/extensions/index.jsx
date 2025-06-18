@@ -2,8 +2,9 @@ import React from 'react';
 import {FormattedMessage} from 'react-intl';
 
 import samlabsIconURL from './samlabs/samlabs.png';
-import sambotIconURL from './samlabs/sambot.png';
 import samlabsInsetIconURL from './samlabs/samlabs-small.svg';
+
+import sambotIconURL from './sambot/sambot.png';
 
 import microbitMoreIconURL from './microbitmore/entry-icon.png';
 import microbitMoreInsetIconURL from './microbitmore/inset-icon.svg';
@@ -97,28 +98,6 @@ const extensions = [
         bluetoothRequired: true
     },
     {
-        name: (
-            <FormattedMessage
-                defaultMessage="Baby SAM Bot"
-                description="Name for the 'Baby SAM Bot' extension"
-                id="gui.extension.sambot.name"
-            />
-        ),
-        extensionId: 'sambot',
-        iconURL: sambotIconURL,
-        insetIconURL: samlabsInsetIconURL,
-        description: (
-            <FormattedMessage
-                defaultMessage="Baby SAM Bot"
-                description="Description for the 'Baby SAM Bot' extension"
-                id="gui.extension.sambot.description"
-            />
-        ),
-        featured: true,
-        disabled: false,
-        bluetoothRequired: true
-    },
-    {
         translationMap: microbitMoreTranslations,
         name: (
             <FormattedMessage
@@ -155,6 +134,27 @@ const extensions = [
             />
         ),
         helpLink: 'https://microbit-more.github.io/',
+    },
+    {
+        name: (
+            <FormattedMessage
+                defaultMessage="Baby SAM Bot"
+                description="Name for the 'Baby SAM Bot' extension"
+                id="gui.extension.sambot.name"
+            />
+        ),
+        extensionId: 'sambot',
+        iconURL: sambotIconURL,
+        description: (
+            <FormattedMessage
+                defaultMessage="Baby SAM Bot"
+                description="Description for the 'Baby SAM Bot' extension"
+                id="gui.extension.sambot.description"
+            />
+        ),
+        featured: true,
+        disabled: false,
+        bluetoothRequired: true
     },
     {
         name: 'Root',
