@@ -112,10 +112,7 @@ const buildConfig = baseConfig.clone()
     .enableDevServer(process.env.PORT || 8601)
     .merge({
         entry: {
-            gui: './src/playground/index.jsx',
-            blocksonly: './src/playground/blocks-only.jsx',
-            compatibilitytesting: './src/playground/compatibility-testing.jsx',
-            player: './src/playground/player.jsx'
+            gui: './src/playground/index.jsx'
         },
         output: {
             path: path.resolve(__dirname, 'build')
@@ -126,27 +123,6 @@ const buildConfig = baseConfig.clone()
         chunks: ['gui'],
         template: 'src/playground/index.ejs',
         title: 'Scratch 3.0 GUI'
-    }))
-    .addPlugin(new HtmlWebpackPlugin({
-        ...commonHtmlWebpackPluginOptions,
-        chunks: ['blocksonly'],
-        filename: 'blocks-only.html',
-        template: 'src/playground/index.ejs',
-        title: 'Scratch 3.0 GUI: Blocks Only Example'
-    }))
-    .addPlugin(new HtmlWebpackPlugin({
-        ...commonHtmlWebpackPluginOptions,
-        chunks: ['compatibilitytesting'],
-        filename: 'compatibility-testing.html',
-        template: 'src/playground/index.ejs',
-        title: 'Scratch 3.0 GUI: Compatibility Testing'
-    }))
-    .addPlugin(new HtmlWebpackPlugin({
-        ...commonHtmlWebpackPluginOptions,
-        chunks: ['player'],
-        filename: 'player.html',
-        template: 'src/playground/index.ejs',
-        title: 'Scratch 3.0 GUI: Player Example'
     }))
     .addPlugin(new CopyWebpackPlugin({
         patterns: [
